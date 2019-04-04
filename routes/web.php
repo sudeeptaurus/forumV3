@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('app');
 });
+
+Route::get('init', 'AppController@init');
+Route::post('login', 'AppController@login');
+Route::post('register', 'AppController@register');
+Route::post('logout', 'AppController@logout');
