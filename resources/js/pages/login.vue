@@ -109,7 +109,7 @@
                         password: this.password,
                     };
 
-                    this.app.req.post('login', data).then((response) => {
+                    this.app.req.post('auth/login', data).then((response) => {
 
                         this.loading = false;
 
