@@ -13,7 +13,7 @@ class ForumController extends Controller
     public function getForumById($id)
     {
         $forum = Forum::find($id);
-        if (isset($forum->id)) {
+        if (!isset($forum->id)) {
             return response()->json(['error' => 401], 200);
         }
 

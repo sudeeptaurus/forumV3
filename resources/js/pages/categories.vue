@@ -18,10 +18,10 @@
                   <li
                     class="list-group-item d-flex justify-content-center align-content-center"
                     style="height: 100px"
-                    v-for="(forum, findex) in category.fora"
-                    :key="findex"
+                    v-for="(forum, fIndex) in category.fora"
+                    :key="fIndex"
                   >
-                    <div>
+                    <div style="width: 40%; display: inline-block">
                       <h5 style="line-height: 75px">
                         <router-link
                           :to="{ name: 'forum', params: { id: forum.id } }"
@@ -50,6 +50,7 @@
                         display: inline-block;
                         padding-top: 15px;
                       "
+                      v-if="forum.latest"
                     >
                       <router-link
                         :to="{
@@ -60,13 +61,11 @@
                         {{ forum.latest.thread_title }}
                       </router-link>
                       <br />
-                      <span
-                        >by {{ forum.latest.user.name }} &middot;
+                      <span>
+                        by {{ forum.latest.user.name }} &middot;
                         {{ forum.latest.created_at | friendlyDate }}
                       </span>
                     </div>
-
-                    >
                   </li>
                 </ul>
               </div>
